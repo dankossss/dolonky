@@ -110,7 +110,24 @@ img {
 .main-nav ul {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 10px;
+    align-items: center;
+}
+
+.main-nav li {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Додаємо вертикальну лінію після кожного пункту, крім останнього */
+.main-nav li:not(:last-child)::after {
+    content: "";
+    width: 1px;
+    height: 14px; /* Висота палички-роздільника */
+    background-color: #E0E0E0; /* Світло-сірий пастельний колір, щоб не кидався в очі */
+    margin-left: 10px; /* Відступ лінії від тексту зліва */
+    display: inline-block;
 }
 
 .main-nav a {
@@ -357,7 +374,306 @@ img {
 }
 
 /* ==========================================================================
-   6. АДАПТИВНІСТЬ (ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ)
+   7. НАШ ДЕНЬ ТА ЧОМУ ОБИРАЮТЬ НАС (SCHEDULE & WHY US)
+   ========================================================================== */
+.schedule-why-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.schedule-why-grid {
+    display: flex;
+    gap: 40px;
+}
+
+/* Спільні стилі для обох великих блоків */
+.schedule-block, .why-block {
+    flex: 1;
+    border-radius: 24px;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* Кастомізація блоку "Наш день" (Блакитні відтінки) */
+.schedule-block {
+    background-color: #F5FAFF; /* Дуже ніжний синій фон */
+}
+
+.schedule-block .block-title {
+    color: #4A90E2; /* Блакитний заголовок */
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.schedule-container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.schedule-list {
+    list-style: none;
+    flex: 1;
+    z-index: 2; /* Щоб текст був поверх ведмедика, якщо вони перетнуться */
+}
+
+.schedule-list li {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #4A4A4A;
+    display: flex;
+    gap: 15px;
+}
+
+.schedule-list li strong {
+    color: #4A90E2; /* Виділення часу блакитним */
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Декоративний ведмедик зліва внизу */
+.schedule-decor {
+    max-height: 140px;
+    width: auto;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+/* Кастомізація блоку "Чому батьки обирають нас" (Рожеві відтінки) */
+.why-block {
+    background-color: #FFF5F6; /* Дуже ніжний рожевий фон */
+}
+
+.why-block .block-title {
+    color: #FF7081; /* Рожевий заголовок */
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.why-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.why-list {
+    list-style: none;
+    flex: 1;
+}
+
+.why-list li {
+    position: relative;
+    padding-left: 25px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #4A4A4A;
+}
+
+/* Рожеві сердечка замість маркерів списку */
+.why-list li::before {
+    content: "❤️";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.85rem;
+}
+
+/* Картинка мами з дитиною справа */
+.why-image {
+    max-width: 160px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   8. ВІДГУКИ БАТЬКІВ (REVIEWS SECTION)
+   ========================================================================== */
+.reviews-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.reviews-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.review-card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* М'яка легка тінь */
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px); /* Легкий ефект при наведенні курсору */
+}
+
+/* Стиль самого тексту відгуку */
+.review-text {
+    font-size: 1.05rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-style: italic;
+    position: relative;
+}
+
+/* Стилізація лапок на початку відгуку (якщо хочеться виділити кольором) */
+.review-text::before {
+    content: "«";
+    color: #FFB3BA; /* Пастельний рожево-помаранчевий для лапок */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.review-text::after {
+    content: "»";
+    color: #FFB3BA;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Блок автора (аватарка + ім'я) */
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px dashed #e9e9e9; /* Акуратна лінія розмежування */
+    padding-top: 15px;
+}
+
+/* Круглі аватарки матусь */
+.review-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee; /* Тимчасовий фон, поки немає картинок */
+}
+
+.review-author h4 {
+    font-size: 1.05rem;
+    color: #4A4A4A;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.review-author p {
+    font-size: 0.85rem;
+    color: #9B9B9B;
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   9. ГАЛЕРЕЯ (GALLERY SECTION)
+   ========================================================================== */
+.gallery-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 картинок в один ряд за макетом */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Зберігає пропорції, обрізаючи зайве */
+    border-radius: 16px; /* Закруглені краї як на макеті */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   10. ПІДВАЛ (FOOTER)
+   ========================================================================== */
+.main-footer {
+    background-color: #F9F9F9; /* Світлий пастельний фон підвалу */
+    padding: 30px 0;
+    border-top: 1px solid #EDEDED;
+    margin-top: 60px; /* Збільшений відступ від попередньої секції */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    height: 35px;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    color: #777777;
+    font-style: italic;
+    text-align: center;
+    flex: 1;
+    max-width: 500px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+/* Круглі іконки соцмереж */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #E0E0E0;
+    color: #4A4A4A;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+    background-color: #93C655;
+    color: #ffffff;
+    border-color: #93C655;
+}
+
+/* ==========================================================================
+   11. АДАПТИВНІСТЬ (МЕДІА-ЗАПИТИ)
    ========================================================================== */
 @media (max-width: 992px) {
     .hero-container, .about-container, .services-grid {
@@ -385,5 +701,60 @@ img {
 
     .lessons-grid {
         grid-template-columns: 1fr;
+    }
+
+    .schedule-why-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .schedule-container, .why-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .schedule-decor, .why-image {
+        order: 2;
+        max-width: 140px;
+    }
+
+    .reviews-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .review-card {
+        padding: 25px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* На мобільних по 2 картинки в ряд */
+        gap: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-text {
+        order: 1; /* Зміщуємо текст в самий центр при мобільній версії */
+    }
+
+    .header-container {
+    flex-direction: column; /* Вишиковуємо логотип і кнопку один під одним */
+    gap: 15px;              /* Робимо акуратний відступ між логотипом і кнопкою */
+    text-align: center;
+    }
+
+    .btn-header {
+        width: auto;            /* Кнопка не буде розтягуватися на весь екран */
+        display: inline-block;
+        padding: 8px 18px;      /* Зменшуємо внутрішні падінги (робимо її компактнішою) */
+        font-size: 0.8rem;      /* Зменшуємо розмір шрифту */
+        margin-top: 5px;        /* Додатково опускаємо її трошки нижче від логотипу */
     }
 }
