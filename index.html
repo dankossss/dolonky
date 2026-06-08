@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Долоньки — Міні-садочок та центр розвитку дітей у Вінниці</title>
+    <!-- Підключаємо шрифт (наприклад, Montserrat або Nunito, які чудово підходять для дитячої тематики) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ШАПКА САЙТУ (HEADER) -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Долоньки міні-садочок">
+                <div class="logo-text">
+                    <span class="logo-title">Долоньки</span>
+                    <span class="logo-subtitle">міні-садочок</span>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero">Головна</a></li>
+                    <li><a href="#about">Про садочок</a></li>
+                    <li><a href="#services">Що ми пропонуємо</a></li>
+                    <li><a href="#schedule">Наш день</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#reviews">Відгуки</a></li>
+                    <li><a href="#contacts">Контакти</a></li>
+                </ul>
+            </nav>
+            <a href="#register" class="btn btn-header">Записатися на знайомство</a>
+        </div>
+    </header>
+
+    <!-- ПЕРШИЙ ЕКРАН (HERO SECTION) -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Долоньки <span><svg class="heart-icon">...</svg></span></h1>
+                <p class="hero-tagline">Міні-садочок та центр розвитку дітей <strong>від 1,5 років</strong> у Вінниці</p>
+                <p class="hero-description">Турбота, безпека та розвиток у атмосфері любові та поваги до кожної дитини.</p>
+                
+                <div class="hero-contacts">
+                    <div class="contact-item">
+                        <i class="icon-geo">📍</i> <span>Старе місто, Вінниця</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon-phone">📞</i> <span>(067) 123 45 67</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon-email">✉️</i> <span>dolonky.vn@gmail.com</span>
+                    </div>
+                </div>
+                
+                <a href="#register" class="btn btn-hero">Записатися на знайомство</a>
+            </div>
+            <div class="hero-image">
+                <!-- Сюди піде головне фото дівчинки з долоньками у фарбі -->
+                <img src="assets/hero-girl.jpg" alt="Дитина грається">
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРО НАС (ABOUT) -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="assets/about-room.jpg" alt="Інтер'єр дитячої кімнати Долоньки">
+            </div>
+            <div class="about-content">
+                <h2 class="section-title">Про нас <span>❤️</span></h2>
+                <p>Ласкаво просимо до міні-садочка «Долоньки» — простору, де кожна дитина відчуває себе важливою, почутою та улюбленою.</p>
+                <p>Ми створили затишне середовище для дітей від 1,5 року, де поєднуються:</p>
+                <ul class="about-list">
+                    <li>Турботливий догляд</li>
+                    <li>М'яка адаптація</li>
+                    <li>Всебічний розвиток</li>
+                    <li>Соціалізація</li>
+                    <li>Цікаві заняття та ігри</li>
+                </ul>
+                <p class="about-footer">Наше головне завдання — допомогти дитині пізнавати світ із радістю та впевненістю.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЩО МИ ПРОПОНУЄМО (SERVICES) -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title text-center">Що ми пропонуємо <span>❤️</span></h2>
+            
+            <div class="services-grid">
+                <!-- Картка 1: Міні-садочок -->
+                <div class="service-card card-light-green">
+                    <div class="card-icon">🏠</div>
+                    <h3>Міні-садочок неповного дня</h3>
+                    <div class="time-badge">08:00–13:00</div>
+                    <ul class="card-list">
+                        <li>Для дітей від 1,5 до 6 років</li>
+                        <li>Невеликі групи</li>
+                        <li>Індивідуальний підхід</li>
+                        <li>Безпечне та комфортне середовище</li>
+                    </ul>
+                </div>
+
+                <!-- Картка 2: Розвиткові заняття -->
+                <div class="service-card card-light-yellow">
+                    <div class="card-icon">🧩</div>
+                    <h3>Розвиткові заняття</h3>
+                    <div class="lessons-grid">
+                        <div class="lesson-item">🗣️ <span>Розвиток мовлення</span></div>
+                        <div class="lesson-item">🧠 <span>Логіка та мислення</span></div>
+                        <div class="lesson-item">🟢 <span>Сенсорний розвиток</span></div>
+                        <div class="lesson-item">🎨 <span>Творчість</span></div>
+                        <div class="lesson-item">🖐️ <span>Дрібна моторика</span></div>
+                        <div class="lesson-item">📚 <span>Підготовка до школи</span></div>
+                        <div class="lesson-item">🎵 <span>Музичні та рухливі активності</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НАШ ДЕНЬ ТА ЧОМУ ОБИРАЮТЬ НАС -->
+    <section id="schedule" class="schedule-why-section">
+        <div class="container schedule-why-grid">
+            
+            <!-- Блок: Наш день -->
+            <div class="schedule-block">
+                <h3 class="block-title">🕒 Наш день</h3>
+                <div class="schedule-container">
+                    <img src="assets/teddy-bear.png" alt="Ведмедик" class="schedule-decor">
+                    <ul class="schedule-list">
+                        <li><strong>08:00–08:30</strong> Зустріч дітей</li>
+                        <li><strong>08:30–09:00</strong> Ранкове коло</li>
+                        <li><strong>09:00–10:00</strong> Тематичні заняття</li>
+                        <li><strong>10:00–10:30</strong> Рухливі ігри</li>
+                        <li><strong>10:30–11:30</strong> Творчість та розвиток</li>
+                        <li><strong>11:30–12:30</strong> Прогулянка або активності</li>
+                        <li><strong>12:30–13:00</strong> Завершення дня</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Блок: Чому батьки обирають нас -->
+            <div class="why-block">
+                <h3 class="block-title">❤️ Чому батьки обирають нас</h3>
+                <div class="why-container">
+                    <ul class="why-list">
+                        <li>Турботливі вихователі</li>
+                        <li>Невеликі групи</li>
+                        <li>Комфортна адаптація</li>
+                        <li>Сучасні методики розвитку</li>
+                        <li>Безпечний простір</li>
+                        <li>Повага до особистості дитини</li>
+                    </ul>
+                    <img src="assets/mother-child.jpg" alt="Мама з дитиною граються" class="why-image">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ (GALLERY) -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title text-center">Галерея <span>❤️</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="assets/gallery1.jpg" alt="Заняття в Долоньках"></div>
+                <div class="gallery-item"><img src="assets/gallery2.jpg" alt="Дитяча творчість"></div>
+                <div class="gallery-item"><img src="assets/gallery3.jpg" alt="Гра дітей"></div>
+                <div class="gallery-item"><img src="assets/gallery4.jpg" alt="Наш простір"></div>
+                <div class="gallery-item"><img src="assets/gallery5.jpg" alt="Розвиваючі ігри"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ВІДГУКИ БАТЬКІВ (REVIEWS) -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title text-center">Відгуки батьків <span>❤️</span></h2>
+            <div class="reviews-grid">
+                <!-- Відгук 1 -->
+                <div class="review-card">
+                    <p class="review-text">«Дитина із задоволенням приходить до садочка та швидко адаптувалася»</p>
+                    <div class="review-author">
+                        <img src="assets/avatar1.jpg" alt="Марія">
+                        <div>
+                            <h4>Марія</h4>
+                            <p>мама Софійки</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Відгук 2 -->
+                <div class="review-card">
+                    <p class="review-text">«Відчувається щира любов до дітей та професійний підхід»</p>
+                    <div class="review-author">
+                        <img src="assets/avatar2.jpg" alt="Олена">
+                        <div>
+                            <h4>Олена</h4>
+                            <p>мама Максимка</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Відгук 3 -->
+                <div class="review-card">
+                    <p class="review-text">«Дуже затишна атмосфера та уважні вихователі»</p>
+                    <div class="review-author">
+                        <img src="assets/avatar3.jpg" alt="Ірина">
+                        <div>
+                            <h4>Ірина</h4>
+                            <p>мама Артемка</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЗАПИС НА ЗНАЙОМСТВО (CONTACTS / REGISTER) -->
+    <section id="register" class="register-section">
+        <div class="container register-box">
+            <div class="register-info">
+                <h2 class="block-title">Запис на знайомство <span>❤️</span></h2>
+                <p class="register-subtitle">Запрошуємо відвідати «Долоньки» та особисто ознайомитися з нашим простором.</p>
+                
+                <div class="register-contacts">
+                    <div class="contact-item">📍 Площа Шкільна, 1, Вінниця</div>
+                    <div class="contact-item">📞 (067) 123 45 67</div>
+                    <div class="contact-item">✉️ dolonky.vm@gmail.com</div>
+                </div>
+            </div>
+            
+            <div class="register-form-container">
+                <!-- Тут за макетом зображений затишний будиночок, але логічно додати просту форму або кнопку -->
+                <div class="house-decor-container">
+                    <img src="assets/house-decor.png" alt="Долоньки будинок" class="house-image">
+                    <a href="tel:+380671234567" class="btn btn-submit">Записатися на безкоштовне знайомство ➔</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПІДВАЛ (FOOTER) -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Долоньки">
+                <div>
+                    <span class="logo-title">Долоньки</span>
+                    <span class="logo-subtitle">міні-садочок</span>
+                </div>
+            </div>
+            <p class="footer-text">Місце, де маленькі долоньки роблять свої великі кроки у світ ❤️</p>
+            <div class="footer-socials">
+                <a href="#" class="social-icon">Facebook (f)</a>
+                <a href="#" class="social-icon">Instagram (ig)</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
