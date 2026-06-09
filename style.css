@@ -672,6 +672,27 @@ img {
     border-color: #93C655;
 }
 
+/* --- Стилі для десктопа (за замовчуванням) --- */
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    padding: 0;
+}
+
+.burger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #6C9E31; /* Гарний зелений колір під стиль сайту */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
 /* ==========================================================================
    11. АДАПТИВНІСТЬ (МЕДІА-ЗАПИТИ)
    ========================================================================== */
@@ -683,11 +704,23 @@ img {
     
     .hero-image, .about-image {
         justify-content: center;
-        order: -1; /* Зображення піднімуться вгору на мобільних */
+        order: -1;
     }
 
+    /* Дозволяємо навігації відображатися на мобільних */
     .main-nav {
-        display: none; /* Тимчасово ховаємо меню, потім зробимо бургер */
+        display: block; 
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-header {
+        display: none; /* Ховаємо велику кнопку реєстрації у шапці на мобільних */
     }
 
     .hero-title {
@@ -730,7 +763,7 @@ img {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* На мобільних по 2 картинки в ряд */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
@@ -741,20 +774,64 @@ img {
     }
 
     .footer-text {
-        order: 1; /* Зміщуємо текст в самий центр при мобільній версії */
+        order: 1;
     }
 
-    .header-container {
-    flex-direction: column; /* Вишиковуємо логотип і кнопку один під одним */
-    gap: 15px;              /* Робимо акуратний відступ між логотипом і кнопкою */
-    text-align: center;
+    /* АКТИВАЦІЯ БУРГЕР КНОПКИ НА СМАРТФОНАХ */
+    .burger-menu {
+        display: flex;
+        z-index: 1001;
     }
 
-    .btn-header {
-        width: auto;            /* Кнопка не буде розтягуватися на весь екран */
-        display: inline-block;
-        padding: 8px 18px;      /* Зменшуємо внутрішні падінги (робимо її компактнішою) */
-        font-size: 0.8rem;      /* Зменшуємо розмір шрифту */
-        margin-top: 5px;        /* Додатково опускаємо її трошки нижче від логотипу */
+    /* ПЕРЕТВОРЕННЯ СПИСКУ НА ВИПАДАЮЧУ ШТОРКУ */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* За межами екрану */
+        width: 250px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        transition: right 0.3s ease-in-out;
+        padding: 80px 25px 30px 25px;
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid #F5F5F5;
+    }
+
+    /* Прибираємо десктопні палички-роздільники */
+    .nav-links li::not(:last-child)::after,
+    .nav-links li:not(:last-child)::after {
+        display: none;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        width: 100%;
+        display: block;
+    }
+
+    /* Клас активного стану (коли шторка відкрита) */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Анімація перетворення смужок на хрестик */
+    .burger-menu.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .burger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 }
