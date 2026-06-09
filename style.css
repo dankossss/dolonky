@@ -706,6 +706,111 @@ img {
 }
 
 /* ==========================================================================
+   СТИЛІ ДЛЯ СЛАЙДЕРА ГАЛЕРЕЇ
+   ========================================================================== */
+.slider-container {
+    position: relative;
+    max-width: 800px; /* Оптимальна ширина для красивого відображення */
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Висота слайдера на десктопі */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* Активний слайд, який ми бачимо */
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Картинка заповнює слайд красиво без деформацій */
+    border-radius: 20px;
+}
+
+/* Кнопки стрілок (Вліво / Вправо) */
+.prev-slide, .next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #6C9E31; /* Наш зелений колір */
+    border: none;
+    font-size: 24px;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.prev-slide:hover, .next-slide:hover {
+    background-color: #93C655;
+    color: #ffffff;
+}
+
+.prev-slide { left: 20px; }
+.next-slide { right: 20px; }
+
+/* Контейнер для крапок */
+.dots-container {
+    text-align: center;
+    padding: 15px 0;
+    background: #ffffff;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #E0E0E0;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #93C655; /* Активна зелена крапка */
+    transform: scale(1.2);
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .slider {
+        height: 280px; /* Зменшуємо висоту слайдера на смартфонах */
+    }
+    .prev-slide, .next-slide {
+        padding: 8px 12px;
+        font-size: 18px;
+    }
+}
+
+/* ==========================================================================
    11. АДАПТИВНІСТЬ (МЕДІА-ЗАПИТИ)
    ========================================================================== */
 @media (max-width: 992px) {

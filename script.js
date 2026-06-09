@@ -17,3 +17,50 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// --- ЛОГІКА СЛАЙДЕРА ГАЛЕРЕЇ ---
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    
+    let currentIdx = 0;
+
+    // Функція, яка оновлює видимість слайдів та крапок
+    function showSlide(index) {
+        // Якщо індекс виходить за рамки — скидаємо по колу
+        if (index >= slides.length) currentIdx = 0;
+        else if (index < 0) currentIdx = slides.length - 1;
+        else currentIdx = index;
+
+        // Перемикаємо класи для слайдів
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[currentIdx].classList.add("active");
+
+        // Перемикаємо класи для крапок
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[currentIdx].classList.add("active");
+    }
+
+    // Кліки на стрілочки
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            showSlide(currentIdx + 1);
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            showSlide(currentIdx - 1);
+        });
+    }
+
+    // Кліки на крапки нижче слайдера
+    dots.forEach(dot => {
+        dot.addEventListener("click", (e) => {
+            const targetIdx = parseInt(e.target.getAttribute("data-index"));
+            showSlide(targetIdx);
+        });
+    });
+});
